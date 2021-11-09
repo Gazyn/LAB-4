@@ -1,0 +1,25 @@
+# Workflow nimi
+name: ITA19-Pipeline
+
+# Siia panna kuna Workflow peaks jookma
+on:
+  push:
+    branches: 
+    - main
+  pull_request:
+    branches: 
+    - main
+
+# Erinevad tööd siia plokki
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Say hello
+        run: echo Hello
+        
+      - name: Run a multi-line script
+        run: |
+          echo Hello
+          echo calling from inside the pipeline
